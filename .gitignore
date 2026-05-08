@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Electron
+*.log
+
+# Environment / secrets — NEVER commit API keys
+.env
+.env.local
+*.secret
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# User config (contains API keys)
+godseye-config.json

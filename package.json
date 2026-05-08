@@ -1,0 +1,57 @@
+{
+  "name": "godseye",
+  "version": "0.1.0",
+  "description": "AI desktop assistant with real-time gaze awareness, voice activation, and contextual intelligence",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "lint": "eslint src/",
+    "test": "jest"
+  },
+  "build": {
+    "appId": "com.godseye.assistant",
+    "productName": "GODSEYE",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.png",
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@mediapipe/tasks-vision": "^0.10.18",
+    "electron-store": "^8.2.0",
+    "tesseract.js": "^5.1.1",
+    "sharp": "^0.33.2"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.17.0",
+    "jest": "^29.7.0"
+  },
+  "author": "MUSTAFA",
+  "license": "MIT"
+}
